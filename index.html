@@ -1,12 +1,954 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="utf-8">
-  <title>Trabalho Prático - Sistemas Operacionais</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>@charset "UTF-8";:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-black:#000;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-primary-text-emphasis:#052c65;--bs-secondary-text-emphasis:#2b2f32;--bs-success-text-emphasis:#0a3622;--bs-info-text-emphasis:#055160;--bs-warning-text-emphasis:#664d03;--bs-danger-text-emphasis:#58151c;--bs-light-text-emphasis:#495057;--bs-dark-text-emphasis:#495057;--bs-primary-bg-subtle:#cfe2ff;--bs-secondary-bg-subtle:#e2e3e5;--bs-success-bg-subtle:#d1e7dd;--bs-info-bg-subtle:#cff4fc;--bs-warning-bg-subtle:#fff3cd;--bs-danger-bg-subtle:#f8d7da;--bs-light-bg-subtle:#fcfcfd;--bs-dark-bg-subtle:#ced4da;--bs-primary-border-subtle:#9ec5fe;--bs-secondary-border-subtle:#c4c8cb;--bs-success-border-subtle:#a3cfbb;--bs-info-border-subtle:#9eeaf9;--bs-warning-border-subtle:#ffe69c;--bs-danger-border-subtle:#f1aeb5;--bs-light-border-subtle:#e9ecef;--bs-dark-border-subtle:#adb5bd;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-color-rgb:33,37,41;--bs-body-bg:#fff;--bs-body-bg-rgb:255,255,255;--bs-emphasis-color:#000;--bs-emphasis-color-rgb:0,0,0;--bs-secondary-color:rgba(33, 37, 41, .75);--bs-secondary-color-rgb:33,37,41;--bs-secondary-bg:#e9ecef;--bs-secondary-bg-rgb:233,236,239;--bs-tertiary-color:rgba(33, 37, 41, .5);--bs-tertiary-color-rgb:33,37,41;--bs-tertiary-bg:#f8f9fa;--bs-tertiary-bg-rgb:248,249,250;--bs-heading-color:inherit;--bs-link-color:#0d6efd;--bs-link-color-rgb:13,110,253;--bs-link-decoration:underline;--bs-link-hover-color:#0a58ca;--bs-link-hover-color-rgb:10,88,202;--bs-code-color:#d63384;--bs-highlight-color:#212529;--bs-highlight-bg:#fff3cd;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#dee2e6;--bs-border-color-translucent:rgba(0, 0, 0, .175);--bs-border-radius:.375rem;--bs-border-radius-sm:.25rem;--bs-border-radius-lg:.5rem;--bs-border-radius-xl:1rem;--bs-border-radius-xxl:2rem;--bs-border-radius-2xl:var(--bs-border-radius-xxl);--bs-border-radius-pill:50rem;--bs-box-shadow:0 .5rem 1rem rgba(0, 0, 0, .15);--bs-box-shadow-sm:0 .125rem .25rem rgba(0, 0, 0, .075);--bs-box-shadow-lg:0 1rem 3rem rgba(0, 0, 0, .175);--bs-box-shadow-inset:inset 0 1px 2px rgba(0, 0, 0, .075);--bs-focus-ring-width:.25rem;--bs-focus-ring-opacity:.25;--bs-focus-ring-color:rgba(13, 110, 253, .25);--bs-form-valid-color:#198754;--bs-form-valid-border-color:#198754;--bs-form-invalid-color:#dc3545;--bs-form-invalid-border-color:#dc3545}*,:after,:before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}:root{--bs-breakpoint-xs:0;--bs-breakpoint-sm:576px;--bs-breakpoint-md:768px;--bs-breakpoint-lg:992px;--bs-breakpoint-xl:1200px;--bs-breakpoint-xxl:1400px}body{background-color:#edeff2;font-family:Gill Sans,sans-serif;font-size:16px;margin:0;padding:0}</style><link rel="stylesheet" href="styles.497a2e5e5951d2e6.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.497a2e5e5951d2e6.css"></noscript></head>
-<body>
-  <app-root></app-root>
-<script src="runtime.5795a5650affbfe6.js" type="module"></script><script src="polyfills.30f97ea9990ef1e6.js" type="module"></script><script src="main.e694ed4955793a1a.js" type="module"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinicius Marques — Solution Architect & Software Engineer</title>
+  <meta name="description" content="Solution Architect and Software Engineer with 6 years of experience. Specialized in performance engineering, DevOps, and architectural erosion correction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-</body></html>
+    :root {
+      --bg: #050810;
+      --bg-card: #0d1117;
+      --bg-elevated: #161b22;
+      --border: rgba(255,255,255,0.07);
+      --purple: #7c3aed;
+      --purple-light: #a78bfa;
+      --purple-glow: rgba(124, 58, 237, 0.15);
+      --blue: #3b82f6;
+      --text: #e2e8f0;
+      --text-muted: #8b949e;
+      --text-dim: #484f58;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(5, 8, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--purple-light);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    }
+
+    .hero-content { position: relative; max-width: 780px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--purple-light);
+      background: var(--purple-glow);
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin: 1.2rem 0 2rem;
+      font-weight: 400;
+    }
+
+    .hero-tagline {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-tagline span { color: var(--purple-light); }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--purple);
+      color: white;
+      border-color: var(--purple);
+    }
+
+    .btn-primary:hover {
+      background: #6d28d9;
+      box-shadow: 0 0 24px rgba(124,58,237,0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--purple-light);
+      color: var(--purple-light);
+      transform: translateY(-1px);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--purple-light);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.97rem;
+    }
+
+    .about-text p strong { color: var(--text); }
+
+    .about-text blockquote {
+      border-left: 3px solid var(--purple);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .stat-card:hover { border-color: rgba(124,58,237,0.4); }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--purple-light);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ── EXPERTISE ── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .expertise-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .expertise-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--blue));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .expertise-card:hover {
+      border-color: rgba(124,58,237,0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .expertise-card:hover::before { opacity: 1; }
+
+    .expertise-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .expertise-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .expertise-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── TECH STACK ── */
+    .tech-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .tech-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    .tech-category-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--purple-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+
+    .chip:hover {
+      border-color: var(--purple-light);
+      color: var(--purple-light);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.25s;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .project-card:hover {
+      border-color: rgba(124,58,237,0.35);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+
+    .project-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--purple-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      line-height: 1.65;
+    }
+
+    .project-result {
+      background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: var(--purple-light);
+      margin-top: 0.75rem;
+    }
+
+    .project-result strong { color: var(--text); }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .project-badge {
+      font-size: 0.72rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-family: var(--mono);
+    }
+
+    .project-icon {
+      font-size: 2.5rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      .project-card { grid-template-columns: 1fr; }
+      .project-icon { display: none; }
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+
+    .highlight-card:hover { border-color: rgba(124,58,237,0.4); }
+
+    .highlight-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .highlight-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .highlight-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--purple-light);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content { animation: fadeUp 0.7s ease both; }
+    .hero-content > * { animation: fadeUp 0.7s ease both; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.05s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.15s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.2s; }
+
+    /* ── CURSOR BLINK ── */
+    .cursor::after {
+      content: '|';
+      animation: blink 1s infinite;
+      color: var(--purple-light);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-brand">$ vmrqs --init</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-tag">Available for consulting · Remote</span>
+      <h1>Vinicius <span>Marques</span></h1>
+      <p class="hero-subtitle">Solution Architect · DevOps Engineer · Software Engineer</p>
+      <p class="hero-tagline">
+        <span>6 yrs</span> · Python · Django · Angular · Azure · Kubernetes · Observability
+      </p>
+      <p class="hero-tagline" style="margin-top: -1rem;">
+        <span class="cursor">Building systems that don't break. Fixing the ones that do</span>
+      </p>
+      <div class="hero-cta">
+        <a href="https://www.linkedin.com/in/vmrqs/" class="btn btn-primary" target="_blank">LinkedIn</a>
+        <a href="https://github.com/PU4VMX" class="btn btn-outline" target="_blank">GitHub</a>
+        <a href="https://orcid.org/0009-0009-0483-2051" class="btn btn-outline" target="_blank">ORCID</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">Who I am</p>
+    <h2 class="section-title">Engineering at the intersection<br/>of architecture and craft</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a Software Engineer and Solution Architect with <strong>6 years of experience</strong> building and rescuing production systems across multiple industries. Specialist in <strong>Django, Spring Boot, Microservices, and Multi-Tenant Architecture</strong>, with hands-on expertise in cloud platforms (AWS &amp; Azure) and production-grade DevOps. I have worked across <strong>consulting firms, digital forensics, data analysis, and private consulting</strong> — environments that demand precision, adaptability, and deep technical judgment under pressure.
+        </p>
+        <p>
+          My specialty is diagnosing the deep causes of system failure — not patches. Architectural erosion, performance degradation, uncontrolled infrastructure costs, and observability blind spots are problems I've solved repeatedly.
+        </p>
+        <p>
+          I'm also a researcher with a <strong>published article</strong> from an award-winning final thesis (TCC), and an active practitioner of AI-augmented engineering — using agentic loops, custom skill construction, and automated workflows as everyday tools.
+        </p>
+        <blockquote>
+          "A creative engineer with an extreme focus on problem-solving at the root level."
+        </blockquote>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Years of experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">ERP</div>
+          <div class="stat-label">Enterprise SaaS built</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Unplanned API restarts (after fix)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">🥇</div>
+          <div class="stat-label">Award-winning TCC & published article</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERTISE -->
+  <section id="expertise">
+    <p class="section-label">What I do</p>
+    <h2 class="section-title">Areas of Expertise</h2>
+    <p class="section-desc">I focus on the parts of engineering that most teams avoid: architectural debt, production instability, and systems that have outgrown their original design.</p>
+
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="expertise-icon">🏗️</div>
+        <h3>Solution Architecture</h3>
+        <p>Designing scalable, maintainable systems from requirements to deployment — multi-tenant, cloud-native, and built to evolve without breaking.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">⚙️</div>
+        <h3>DevOps & Infrastructure</h3>
+        <p>CI/CD pipelines, containerization with Docker, orchestration with Kubernetes, and cloud management on Azure — from provisioning to monitoring.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">⚡</div>
+        <h3>Performance Engineering</h3>
+        <p>Profiling and eliminating bottlenecks, memory leaks, connection pool exhaustion, and latency issues that degrade user experience and uptime.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🔧</div>
+        <h3>Architectural Erosion Correction</h3>
+        <p>Reversing entropy in legacy software and infrastructure — restructuring systems that have decayed over years of organic growth and shortcuts.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">📡</div>
+        <h3>Observability</h3>
+        <p>Implementing monitoring, distributed tracing, and alerting pipelines from scratch — so your team knows what's failing before your users do.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">💰</div>
+        <h3>Infrastructure Cost Optimization</h3>
+        <p>Reducing cloud spend without sacrificing reliability. Identifying waste, right-sizing resources, and redesigning workflows to run leaner.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🤖</div>
+        <h3>AI-Augmented Engineering</h3>
+        <p>Proficient in agentic AI workflows — building loops, custom skills, and automated pipelines that multiply engineering output and reduce repetitive work.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">📊</div>
+        <h3>Business Intelligence Embedded</h3>
+        <p>Integrating analytics (Power BI Embedded) directly into SaaS products with tenant-level row security and real-time data refresh.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TECH STACK -->
+  <section id="stack">
+    <p class="section-label">Technologies</p>
+    <h2 class="section-title">Tech Stack</h2>
+    <p class="section-desc">Tools I use daily in production — across backend, frontend, infrastructure, and beyond.</p>
+
+    <div class="tech-categories">
+      <div class="tech-category">
+        <div class="tech-category-label">Backend</div>
+        <div class="tech-chips">
+          <span class="chip">Python</span>
+          <span class="chip">Django</span>
+          <span class="chip">Java</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">Celery</span>
+          <span class="chip">REST APIs</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <div class="tech-category-label">Messaging</div>
+        <div class="tech-chips">
+          <span class="chip">RabbitMQ</span>
+          <span class="chip">Message Queues</span>
+          <span class="chip">Async Workers</span>
+          <span class="chip">Event-Driven</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <div class="tech-category-label">Frontend</div>
+        <div class="tech-chips">
+          <span class="chip">Angular</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Power BI Embedded</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <div class="tech-category-label">Cloud & DevOps</div>
+        <div class="tech-chips">
+          <span class="chip">Azure</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Kubernetes</span>
+          <span class="chip">CI/CD</span>
+          <span class="chip">Infrastructure as Code</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <div class="tech-category-label">Observability</div>
+        <div class="tech-chips">
+          <span class="chip">Monitoring</span>
+          <span class="chip">Distributed Tracing</span>
+          <span class="chip">Alerting</span>
+          <span class="chip">Logging Pipelines</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <div class="tech-category-label">Hardware</div>
+        <div class="tech-chips">
+          <span class="chip">Arduino</span>
+          <span class="chip">Embedded Systems</span>
+          <span class="chip">IoT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label">Case Studies</p>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-desc">Work that demonstrates what I actually do — not just technologies used, but problems solved.</p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">Enterprise SaaS · Multi-tenant</p>
+          <h3>ERP — Enterprise Consulting Platform</h3>
+          <p>
+            Enterprise resource planning platform built for a multi-tenant SaaS environment. Led the full architecture design, backend development, and DevOps implementation. Supports isolated databases per tenant, elastic scaling, and LGPD compliance — built to serve multiple industries simultaneously.
+          </p>
+          <div class="project-tech">
+            <span class="project-badge">Django</span>
+            <span class="project-badge">Angular</span>
+            <span class="project-badge">Azure</span>
+            <span class="project-badge">Docker</span>
+            <span class="project-badge">CI/CD</span>
+            <span class="project-badge">Celery</span>
+            <span class="project-badge">RabbitMQ</span>
+          </div>
+        </div>
+        <div class="project-icon">🏢</div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">Business Intelligence · Embedded Analytics</p>
+          <h3><a href="https://app.powerbiembed.com.br/auth/login" target="_blank" style="color: inherit; text-decoration: none;">Power BI Embedded Platform ↗</a></h3>
+          <p>
+            Integrated embedded Power BI dashboards directly into a client-facing SaaS platform. Implemented tenant-level row-level security ensuring each client sees only their own data. Enabled real-time business intelligence for non-technical stakeholders without requiring separate BI tooling or exports.
+          </p>
+          <div class="project-tech">
+            <span class="project-badge">Power BI Embedded</span>
+            <span class="project-badge">Azure</span>
+            <span class="project-badge">Row-Level Security</span>
+            <span class="project-badge">Angular</span>
+          </div>
+        </div>
+        <div class="project-icon">📊</div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">CRM · Sales & Lead Management</p>
+          <h3><a href="https://crm.leadsforme.com.br/login" target="_blank" style="color: inherit; text-decoration: none;">CRM — LeadsForMe ↗</a></h3>
+          <p>
+            CRM platform built for consulting and sales teams to manage leads, pipelines, and client relationships. Designed for speed, reliability, and customizable workflows — delivering a streamlined experience from first contact to closed deal.
+          </p>
+          <div class="project-tech">
+            <span class="project-badge">FastAPI</span>
+            <span class="project-badge">Angular</span>
+            <span class="project-badge">Celery</span>
+            <span class="project-badge">Docker</span>
+            <span class="project-badge">Azure</span>
+            <span class="project-badge">Redis</span>
+            <span class="project-badge">Azure Service Bus</span>
+          </div>
+        </div>
+        <div class="project-icon">🤝</div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">Hardware + AI · Published Research · Sociedade Brasileira de Computação · CoUrb 2025</p>
+          <h3><a href="https://sol.sbc.org.br/index.php/courb/article/view/35253" target="_blank" style="color: inherit; text-decoration: none;">Áurea — AI Glasses for Visual Impairment ↗</a></h3>
+          <p>
+            Award-winning final thesis (TCC) published at the <strong>IX Workshop de Computação Urbana — Sociedade Brasileira de Computação (SBC)</strong>. Low-cost AI glasses combining computer vision and an ultrasonic sensor to generate real-time scene descriptions and obstacle alerts for visually impaired individuals.
+          </p>
+          <p>
+            Communication via MQTT, AI inference running at the edge on an ESP32, and a FastAPI backend orchestrating AI responses. A project at the intersection of embedded engineering, accessibility, and social impact.
+          </p>
+          <div class="project-result">
+            <strong>DOI:</strong> <a href="https://doi.org/10.5753/courb.2025.8751" target="_blank" style="color: var(--purple-light);">10.5753/courb.2025.8751</a> · Pages 85–98 · ISSN 2595-2706
+          </div>
+          <div class="project-tech">
+            <span class="project-badge">FastAPI</span>
+            <span class="project-badge">MQTT</span>
+            <span class="project-badge">Computer Vision</span>
+            <span class="project-badge">Edge Inference</span>
+            <span class="project-badge">ESP32</span>
+            <span class="project-badge">Embedded Systems</span>
+            <span class="project-badge">AI</span>
+          </div>
+        </div>
+        <div class="project-icon">🥽</div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-tag">Performance Engineering · Production Rescue</p>
+          <h3>API Stability & Bottleneck Resolution</h3>
+          <p>
+            <strong>The problem:</strong> A mission-critical production API required manual restarts every single day to keep functioning. The development team had normalized this as routine maintenance.
+          </p>
+          <p>
+            <strong>The investigation:</strong> Deep profiling and tracing revealed memory leaks under asynchronous load and unmanaged connection pools exhausting system resources overnight.
+          </p>
+          <p>
+            <strong>The fix:</strong> Redesigned the task processing architecture with Celery + Azure Service Bus + Redis, deployed via Azure Container Apps and Container Registry, and added API Management for governance and observability.
+          </p>
+          <div class="project-result">
+            <strong>Result:</strong> Zero unplanned restarts for 6+ months. The API is now stable, reliable, and production-grade — without the daily fire drill.
+          </div>
+          <div class="project-tech">
+            <span class="project-badge">Python</span>
+            <span class="project-badge">FastAPI</span>
+            <span class="project-badge">Celery</span>
+            <span class="project-badge">Azure Service Bus</span>
+            <span class="project-badge">Redis</span>
+            <span class="project-badge">Azure Container Apps</span>
+            <span class="project-badge">Azure Container Registry</span>
+            <span class="project-badge">API Management</span>
+          </div>
+        </div>
+        <div class="project-icon">⚡</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights">
+    <p class="section-label">Recognition & Skills</p>
+    <h2 class="section-title">Highlights</h2>
+
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon">🥇</div>
+        <div>
+          <h3>Melhor TCC · IFMG 2025</h3>
+          <p><a href="https://sol.sbc.org.br/index.php/courb/article/view/35253" target="_blank" style="color: var(--purple-light);">Áurea: AI Glasses for Visual Impairment</a> — 🥇 Melhor TCC do IV Workshop de Sistemas de Informação do IFMG, publicado na Sociedade Brasileira de Computação (SBC) · CoUrb 2025. DOI: 10.5753/courb.2025.8751</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🎓</div>
+        <div>
+          <h3>Published Researcher</h3>
+          <p>Indexed on ORCID — <a href="https://orcid.org/0009-0009-0483-2051" target="_blank" style="color: var(--purple-light);">0009-0009-0483-2051</a></p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🤖</div>
+        <div>
+          <h3>AI Power User</h3>
+          <p>Skilled in agentic AI workflows — building loops, skill construction, and automated pipelines that multiply engineering output.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🔩</div>
+        <div>
+          <h3>Hardware + Software</h3>
+          <p>End-to-end range: from embedded systems (Arduino, IoT) through distributed cloud-scale architecture.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🎯</div>
+        <div>
+          <h3>Extreme Problem Focus</h3>
+          <p>Creative engineer who doesn't stop at symptoms. Every fix is a redesign that prevents the problem from returning.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🌐</div>
+        <div>
+          <h3>Cross-Industry Experience</h3>
+          <p>Delivered scalable solutions across consulting firms, digital forensics, data analysis, and private consulting engagements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/vmrqs/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/PU4VMX" target="_blank">GitHub</a>
+      <a href="https://orcid.org/0009-0009-0483-2051" target="_blank">ORCID</a>
+    </div>
+    <p>Vinicius Marques · Solution Architect & Software Engineer · Conselheiro Lafaiete, MG · Brasil</p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">🎓 IFMG — Instituto Federal de Minas Gerais</p>
+  </footer>
+
+</body>
+</html>
